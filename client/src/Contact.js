@@ -13,7 +13,7 @@ function Contact() {
 
   const submitForm = async () => {
     try {
-      await fetch("https://whattocook2-4e261a72626f.herokuapp.com/contactus", {
+      await fetch("https://wtcapp-43747f770a6d.herokuapp.com/contactus", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

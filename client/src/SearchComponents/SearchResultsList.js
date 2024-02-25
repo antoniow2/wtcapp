@@ -43,7 +43,7 @@ export const SearchResultsList = ({
   const isBookmark = async (recipeID) => {
     try {
       const response = await Axios.post(
-        "https://whattocook2-4e261a72626f.herokuapp.com/users/isBookmarked",
+        "https://wtcapp-43747f770a6d.herokuapp.com/users/isBookmarked",
         {
           data: { recipeID },
         },
@@ -67,7 +67,7 @@ export const SearchResultsList = ({
 
       if (!isCurrentlyBookmarked) {
         await Axios.post(
-          "https://whattocook2-4e261a72626f.herokuapp.com/users/bookmark_recipe",
+          "https://wtcapp-43747f770a6d.herokuapp.com/users/bookmark_recipe",
           {
             data: { recipeID },
           },
@@ -81,7 +81,7 @@ export const SearchResultsList = ({
         console.log("Recipe bookmarked successfully!");
       } else {
         await Axios.post(
-          "https://whattocook2-4e261a72626f.herokuapp.com/users/unbookmark_recipe",
+          "https://wtcapp-43747f770a6d.herokuapp.com/users/unbookmark_recipe",
           {
             data: { recipeID },
           },
@@ -145,7 +145,7 @@ export const SearchResultsList = ({
                         {idx > 0 && ", "}
                         {
                           <Link
-                            to="https://whattocook2-4e261a72626f.herokuapp.com/PriceComparer"
+                            to="https://wtcapp-43747f770a6d.herokuapp.com/PriceComparer"
                             onClick={() => handleIngredientClick(ingredient)}
                           >
                             {ingredient}

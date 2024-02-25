@@ -23,7 +23,7 @@ export const RecipeGenerator = ({ onIngredientSelect, selectedRecipe }) => {
     const fetchLibrary = async () => {
       try {
         const response = await Axios.get(
-          "https://whattocook2-4e261a72626f.herokuapp.com/recipe/library",
+          "https://wtcapp-43747f770a6d.herokuapp.com/recipe/library",
           {
             withCredentials: true,
             headers: {
@@ -43,7 +43,7 @@ export const RecipeGenerator = ({ onIngredientSelect, selectedRecipe }) => {
   const fetchData = async () => {
     try {
       const responseData = await Axios.get(
-        "https://whattocook2-4e261a72626f.herokuapp.com/recipe/recipesIngredient",
+        "https://wtcapp-43747f770a6d.herokuapp.com/recipe/recipesIngredient",
         {
           withCredentials: true,
           headers: {
@@ -128,7 +128,7 @@ export const RecipeGenerator = ({ onIngredientSelect, selectedRecipe }) => {
   const isBookmark = async (recipeID) => {
     try {
       const response = await Axios.post(
-        "https://whattocook2-4e261a72626f.herokuapp.com/users/isBookmarked",
+        "https://wtcapp-43747f770a6d.herokuapp.com/users/isBookmarked",
         {
           data: { recipeID },
         },
@@ -153,7 +153,7 @@ export const RecipeGenerator = ({ onIngredientSelect, selectedRecipe }) => {
 
       if (!isCurrentlyBookmarked) {
         await Axios.post(
-          "https://whattocook2-4e261a72626f.herokuapp.com/users/bookmark_recipe",
+          "https://wtcapp-43747f770a6d.herokuapp.com/users/bookmark_recipe",
           {
             data: { recipeID },
           },
@@ -167,7 +167,7 @@ export const RecipeGenerator = ({ onIngredientSelect, selectedRecipe }) => {
         console.log("Recipe bookmarked successfully!");
       } else {
         await Axios.post(
-          "https://whattocook2-4e261a72626f.herokuapp.com/users/unbookmark_recipe",
+          "https://wtcapp-43747f770a6d.herokuapp.com/users/unbookmark_recipe",
           {
             data: { recipeID },
           },
@@ -232,7 +232,7 @@ export const RecipeGenerator = ({ onIngredientSelect, selectedRecipe }) => {
               {allRecipes.map((recipe, index) => (
                 <div key={index} className="library-item">
                   <img
-                    src={`https://whattocook2-4e261a72626f.herokuapp.com/recipe_images/${recipe.image}`}
+                    src={`https://wtcapp-43747f770a6d.herokuapp.com/recipe_images/${recipe.image}`}
                     alt={recipe.recipeName}
                   />
                   <h3>{recipe.recipeName}</h3>

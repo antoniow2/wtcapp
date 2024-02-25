@@ -63,7 +63,7 @@ router.post("/register", async (req, res) => {
 });
 
 // Login
-router.post("/login", (req, res) => {
+/*router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
   pool.getConnection((err, conn) => {
@@ -109,9 +109,9 @@ router.post("/login", (req, res) => {
       }
     });
   });
-});
+}); **/
 
-/*router.post("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   try {
     const foundUser = await Users.findOne({
@@ -135,7 +135,7 @@ router.post("/login", (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
-}); **/
+});
 
 // Logout
 router.post("/logout", authenticate, async (req, res) => {
